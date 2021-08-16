@@ -6,42 +6,62 @@ namespace calculator
     {
         static void Main(string[] args)
         {
-            subtract();
+            Divide();
         }
         static void Sum()
         {
             Console.Clear();
 
-            Console.WriteLine("Primeiro valor:");
+            Console.WriteLine("First value:");
             float firstValue = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Segundo valor:");
+            Console.WriteLine("Second value:");
             float secondValue = float.Parse(Console.ReadLine());
 
             float resultado = firstValue + secondValue;
 
             Console.WriteLine();
-            Console.WriteLine($"O resultado da soma é {resultado}");
+            Console.WriteLine($"The result of sum is {resultado}");
             
             Console.ReadKey();
         }
     
-        static void subtract(){
+        static void Subtract(){
             Console.Clear();
 
-            Console.WriteLine("Primeiro valor:");
+            Console.WriteLine("First value:");
             float firstValue = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Segundo Valor:");
+            Console.WriteLine("Second value:");
             float secondValue = float.Parse(Console.ReadLine());
 
             Console.WriteLine();
 
             float result = firstValue - secondValue;
-            Console.WriteLine($"O resultado da subtração é {result}");
+            Console.WriteLine($"The result of subtraction is {result}");
 
             Console.ReadKey();
         }
+
+        static void Divide(){
+            Console.Clear();
+
+            Console.WriteLine("First value:");
+            float firstValue = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Second value:");
+            float secondValue = float.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            float result = firstValue / secondValue;
+
+            Console.WriteLine($"The result of the division is {result}");
+
+            Console.ReadKey();
+        }
+   
+
     }
 
 
