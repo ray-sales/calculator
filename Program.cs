@@ -6,10 +6,45 @@ namespace calculator
     {
         static void Main(string[] args)
         {
-                CalculatorMain();
+            short optionSelected = 0;
+
+            while (optionSelected != 5)
+            {
+                optionSelected = SelectOption();
+                if (optionSelected > 0 && optionSelected < 6)
+                {
+                    ExecuteOperation(optionSelected);
+                    Console.ReadKey();
+                }
+            }
         }
 
-        static void CalculatorMain(){
+        static void ExecuteOperation(short optionSelected)
+        {
+
+            Console.Clear();
+
+            Console.WriteLine("First value:");
+            float firstValue = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Second value:");
+            float secondValue = float.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            switch (optionSelected)
+            {
+                case 1: Sum(firstValue, secondValue); break;
+                case 2: Subtract(firstValue, secondValue); break;
+                case 3: Divide(firstValue, secondValue); break;
+                case 4: Multiply(firstValue, secondValue); break;
+                case 5: System.Environment.Exit(0); break;
+                default: break;
+            }
+        }
+
+        static short SelectOption()
+        {
             Console.Clear();
 
             Console.WriteLine("What do you want do?");
@@ -17,83 +52,38 @@ namespace calculator
             Console.WriteLine("2 - Subtraction (-)");
             Console.WriteLine("3 - Division (/)");
             Console.WriteLine("4 - Multiplication (*)");
+            Console.WriteLine("5 - Exit");
 
             Console.WriteLine("---------");
 
             Console.WriteLine("Select an option:");
             short optionSelected = short.Parse(Console.ReadLine());
-            
 
+            return optionSelected;
         }
-        static void Sum()
+
+        static void Sum(float a, float b)
         {
-            Console.Clear();
-
-            Console.WriteLine("First value:");
-            float firstValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine("Second value:");
-            float secondValue = float.Parse(Console.ReadLine());
-
-            float resultado = firstValue + secondValue;
-
-            Console.WriteLine();
-            Console.WriteLine($"The result of sum is {resultado}");
-            
-            Console.ReadKey();
+            float result = a + b;
+            Console.WriteLine($"The result of sum is {result}");
         }
-    
-        static void Subtract(){
-            Console.Clear();
 
-            Console.WriteLine("First value:");
-            float firstValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine("Second value:");
-            float secondValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine();
-
-            float result = firstValue - secondValue;
+        static void Subtract(float a, float b)
+        {
+            float result = a - b;
             Console.WriteLine($"The result of subtraction is {result}");
-
-            Console.ReadKey();
         }
 
-        static void Divide(){
-            Console.Clear();
-
-            Console.WriteLine("First value:");
-            float firstValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine("Second value:");
-            float secondValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine();
-
-            float result = firstValue / secondValue;
-
+        static void Divide(float a, float b)
+        {
+            float result = a / b;
             Console.WriteLine($"The result of the division is {result}");
-
-            Console.ReadKey();
         }
 
-        static void Multiply(){
-            Console.Clear();
-
-            Console.WriteLine("First value:");
-            float firstValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine("Second value:");
-            float secondValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine();
-
-            float result = firstValue * secondValue;
-
+        static void Multiply(float a, float b)
+        {
+            float result = a * b;
             Console.WriteLine($"The result of multiplication is {result}");
-
-            Console.ReadKey();
         }
 
     }
