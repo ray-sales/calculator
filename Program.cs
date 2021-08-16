@@ -6,31 +6,34 @@ namespace calculator
     {
         static void Main(string[] args)
         {
-            short optionSelected = 0;
+            AppStart();
 
-            while (optionSelected != 5)
-            {
-                optionSelected = SelectOption();
-                if (optionSelected > 0 && optionSelected < 6)
-                {
-                    ExecuteOperation(optionSelected);
-                    Console.ReadKey();
-                }
-            }
+        }
+
+        static void AppStart()
+        {
+            short optionSelected = SelectOption();
+            ExecuteOperation(optionSelected);
+            Console.ReadKey();
         }
 
         static void ExecuteOperation(short optionSelected)
         {
+            float firstValue = 0;
+            float secondValue = 0;
+            
+            if (optionSelected > 0 && optionSelected < 6)
+            {
+                Console.Clear();
 
-            Console.Clear();
+                Console.WriteLine("First value:");
+                firstValue = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("First value:");
-            float firstValue = float.Parse(Console.ReadLine());
+                Console.WriteLine("Second value:");
+                secondValue = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Second value:");
-            float secondValue = float.Parse(Console.ReadLine());
-
-            Console.WriteLine();
+                Console.WriteLine();
+            }
 
             switch (optionSelected)
             {
@@ -39,7 +42,7 @@ namespace calculator
                 case 3: Divide(firstValue, secondValue); break;
                 case 4: Multiply(firstValue, secondValue); break;
                 case 5: System.Environment.Exit(0); break;
-                default: break;
+                default: AppStart(); break;
             }
         }
 
