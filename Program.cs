@@ -60,7 +60,24 @@ namespace calculator
 
             Console.ReadKey();
         }
-   
+
+        static void Multiply(){
+            Console.Clear();
+
+            Console.WriteLine("First value:");
+            float firstValue = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Second value:");
+            float secondValue = float.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            float result = firstValue * secondValue;
+
+            Console.WriteLine($"The result of multiplication is {result}");
+
+            Console.ReadKey();
+        }
 
     }
 
