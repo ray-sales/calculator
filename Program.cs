@@ -6,7 +6,24 @@ namespace calculator
     {
         static void Main(string[] args)
         {
-            Divide();
+                CalculatorMain();
+        }
+
+        static void CalculatorMain(){
+            Console.Clear();
+
+            Console.WriteLine("What do you want do?");
+            Console.WriteLine("1 - Sum (+)");
+            Console.WriteLine("2 - Subtraction (-)");
+            Console.WriteLine("3 - Division (/)");
+            Console.WriteLine("4 - Multiplication (*)");
+
+            Console.WriteLine("---------");
+
+            Console.WriteLine("Select an option:");
+            short optionSelected = short.Parse(Console.ReadLine());
+            
+
         }
         static void Sum()
         {
